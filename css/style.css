@@ -36,14 +36,14 @@ img{
 }
 
 a:visited { /* visited link */
-  color: #ff7f50;
+  color: #444444;
 }
 a:active { /* selected link */
   color: #994c30;
 }
 
 a {
-  color: #ff7f50;
+  color: #000000;
   text-decoration: none; /* No underlining */
 }
 a:hover
@@ -54,12 +54,12 @@ a:focus {
 
 .button {
   display: inline-block;
-  background-color: ##F6F2EA;
+  background-color: #F6F2EA;
   color: #000000; /* needed to override the default link color */
   font-weight: 400;
   padding: 10px;
   border-radius: 3px;
-  border-bottom: 2px solid ##F6F2EA; /* width of the border, type, color */
+  border-bottom: 2px solid #F6F2EA; /* width of the border, type, color */
   transition: 0.2s opacity;
 }
 
@@ -78,8 +78,14 @@ a:focus {
   margin: 25px 0; /* 25px top and bottom, 0 left and right */
 }
 
-#hero h1 {
-  text-align:center
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#hero h1, h4 {
+  text-align: center;
 }
 
 .logo {
@@ -87,7 +93,7 @@ a:focus {
 }
 
 header {
-  background-color: #ffe4c4;
+  background-color: #F6F2EA;
   text-align: center;
   padding: 10px 0;
 }
@@ -109,8 +115,104 @@ nav > ul > li > a {
 }
 
 #hero {
-  background-color: #ffe4c4;
+  background-color: #FFFFFF;
   padding: 20px 0;
   display: inline-block;
   width: 100%;
+
+}
+
+#hero span {
+  display: block;
+}
+
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+
+  nav{
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+
+  [class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+}
+/* ==============================
+Large devices (1024px or larger)
+================================= */
+@media only screen and (min-width: 1024px) {
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CSS Transition */
+
+.button {
+  display: inline-block;
+  background-color: #A8A6A1;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid #A8A6A1;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+/* CSS Animation */
+
+@keyframes color-change {
+  0% {fill: #edc655;}
+  50% {fill: #fcffad;}
+  100% {fill: #f76414;}
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {transform: translate(0,50px);}
+  to {transform: translate(200px,50px);}
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {transform: translate(446px,48px);}
+  to {transform: translate(100px, 48px);}
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
 }
