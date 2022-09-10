@@ -10,23 +10,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Julia Zhu UX Portfolio</title>
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
   <!--- Header section-->
   <header>
     <div class="container">
+      <div class="navtoggle" id="myNavtoggle">
       <picture>
         <source srcset="img/expert/logo.svg" media="(max-width:767px)">
         <img src="img/expert/logo.svg" alt="Julia Zhu" style="width:130px;height:200px;">
       </picture>
       <nav>
         <ul>
-          <li><a href="index.html"> Work</a></li>
-          <li><a href="about.html"> About</a></li>
-          <li><a href="contact"> Contact</a></li>
+          <li><a href="index.html" onclick="menuToggle()"> Work</a></li>
+          <li><a href="about.html" onclick="menuToggle()"> About</a></li>
+          <li><a href="contact" onclick="menuToggle()"> Contact</a></li>
+          <li><a href="javascript:void(0);" class="icon" onclick="menuToggle()"><iconify-icon icon="clarity:bars-line"></iconify-icon></a></li>
         </ul>
       </nav>
+    </div>
     </div>
   </header>
 
@@ -737,6 +741,7 @@
     <!-- / Social Media -->
 
   </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
 </body>
 
